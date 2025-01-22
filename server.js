@@ -6,6 +6,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.status(200).send("Success! The server is running.");
+});
+
 app.post("/compare-price", async (req, res) => {
   const { productUrl } = req.body;
   console.log(productUrl);
